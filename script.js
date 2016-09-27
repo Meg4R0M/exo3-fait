@@ -8,7 +8,6 @@ function genererHTML(){
 	// On efface le contenu de "body"
 	document.body.innerHTML = "";
     // On crée les éléments conteneurs
-	var mainDiv = document.createElement('div');
 	var mainP = document.createElement('p');
 	mainP.id = 'parag1';
 
@@ -31,12 +30,9 @@ function genererHTML(){
 	mainP.appendChild(textNodes[1]);
 	mainP.appendChild(textNodes[2]);
 	mainP.appendChild(textNodes[3]);
-	// On insere les p dans une div
-	mainDiv.appendChild(mainP);
-	// On y ajoute le bouton
-	mainDiv.appendChild(w3cButton1);
 	// Nous finissons par inserer le "div" dans notre "body"
-	document.body.appendChild(mainDiv);
+	document.body.appendChild(mainP);
+	document.body.appendChild(w3cButton1);
 }
 
 // Activation de la fonction changerStyle() lors du clic sur le bouton
