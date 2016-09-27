@@ -1,8 +1,16 @@
+﻿var Button1 = document.createElement('button');
+Button1.setAttribute('onclick', 'genererHTML()');
+var textNode = [document.createTextNode('Tu veux du HTML ?')];
+Button1.appendChild(textNode[0]);
+document.body.appendChild(Button1);
+
 function genererHTML(){
-    // On crée l'élément conteneur
+	// On efface le contenu de "body"
+	document.body.innerHTML = "";
+    // On crée les éléments conteneurs
+	var mainDiv = document.createElement('div');
 	var mainP = document.createElement('p');
 	mainP.id = 'parag1';
-	var mainDiv = document.createElement('div');
 
 	// On crée tous les nœuds textuels, pour plus de facilité
 	var textNodes = [
@@ -10,7 +18,7 @@ function genererHTML(){
     	document.createTextNode('tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,'),
     	document.createTextNode('quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo'),
     	document.createTextNode('consequat.'),
-    	document.createTextNode('Fou L\'Bordel')
+    	document.createTextNode('Clique-moi, je suis transformiste :D')
 	];
 
 	// On crée le <button>
@@ -23,20 +31,25 @@ function genererHTML(){
 	mainP.appendChild(textNodes[1]);
 	mainP.appendChild(textNodes[2]);
 	mainP.appendChild(textNodes[3]);
+	// On insere les p dans une div
 	mainDiv.appendChild(mainP);
+	// On y ajoute le bouton
 	mainDiv.appendChild(w3cButton1);
+	// Nous finissons par inserer le "div" dans notre "body"
 	document.body.appendChild(mainDiv);
-	//document.body.appendChild(mainB);
 }
 
 // Activation de la fonction changerStyle() lors du clic sur le bouton
 function changerStyle(){
 	// Changement de la couleur du texte dans le paragraphe
-	document.getElementById('parag1').style.color="lightblue";
-	// Ajout d'une bordure
+	document.getElementById('parag1').style.color="lightblue"; //getElementById => prendre l'element avec l'ID
+	// Ajout d'une bordure rouge de 10px dotted
 	document.getElementById('parag1').style.border="red 10px dotted";
-	// Ajout d'un padding
+	// Ajout d'un padding de 5px
     document.getElementById('parag1').style.padding="5px";
     // Changement de la couleur de fond du body
-    document.body.style.backgroundColor = "black";
+    document.body.style.backgroundColor = "black"; //Dans le "body" (html), modifier le "style" (CSS), en choisissant "backgroundColor" (Propriete)
+	// On rend invisible le "button"
+	monButton = document.querySelector('button');
+	monButton.style.display = 'none';
 }
