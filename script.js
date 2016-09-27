@@ -1,7 +1,12 @@
-﻿var Button1 = document.createElement('button');
+﻿// On crée notre premier bouton
+var Button1 = document.createElement('button');
+// On lui attribut le parametre onclick="genererHTML()"
 Button1.setAttribute('onclick', 'genererHTML()');
+// Nous créons ensuite un noeud textuel
 var textNode = [document.createTextNode('Tu veux du HTML ?')];
+// on insere le noeud dans le bouton
 Button1.appendChild(textNode[0]);
+// et enfin on l'affiche
 document.body.appendChild(Button1);
 
 function genererHTML(){
@@ -45,7 +50,8 @@ function changerStyle(){
     document.getElementById('parag1').style.padding="5px";
     // Changement de la couleur de fond du body
     document.body.style.backgroundColor = "black"; //Dans le "body" (html), modifier le "style" (CSS), en choisissant "backgroundColor" (Propriete)
-	// On rend invisible le "button"
+	// On selectionne le bouton precedement créer
 	monButton = document.querySelector('button');
+	// Et on lui dis de se camoufler
 	monButton.style.display = 'none';
 }
